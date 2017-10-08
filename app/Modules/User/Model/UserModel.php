@@ -101,16 +101,18 @@ class UserModel extends Model implements AuthenticatableContract,
             'overdue_date' => date('Y-m-d H:i:s', $now + 60*60*3),
             'validation_code' => $validationCode,
             'created_at' => $date,
+            'email_status'=>'2',
+            'status'=>'1',
             'updated_at' => $date
         );
         $objUser = new UserModel();
         
         $status = $objUser->initUser($userArr);
         if ($status){
-            $emailSendStatus = \MessagesClass::sendActiveEmail($data['email']);
-            if (!$emailSendStatus){
-                $status = false;
-            }
+//         $emailSendStatus = \MessagesClass::sendActiveEmail($data['email']);
+//          if (!$emailSendStatus){
+//              $status = false;
+//          }
             return $status;
         }
     }

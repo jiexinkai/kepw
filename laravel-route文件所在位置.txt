@@ -1,0 +1,11 @@
+﻿kppw项目的咨询中心所在的route文件所在位置：/app/moudles/article/http/routes.php
+文章列表所属群组是：article,默认文章列表页访问的是article模块下的InformationController控制器下的index方法。
+
+项目首页的route文件所在位置：app/http/routes.php
+默认根目录访问的控制是：HomeController@index。
+
+登录及注册模块的route文件所在位置：app/moudles/article/http/routes.php
+登录访问的控制器是：user模块下的 Auth\AuthController@getLogin，提交到Auth\AuthController@postLogin
+注册访问的控制器是：user模块下的Auth\AuthController@getRegister，提交到Auth\AuthController@postRegister
+
+

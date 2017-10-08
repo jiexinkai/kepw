@@ -108,9 +108,9 @@ class AuthController extends IndexController
             ->orWhere('name', $request->get('username'))
             ->orWhere('mobile', $request->get('username'))->first();
 
-        if ($user && !$user->status) {
-            return redirect('waitActive/' . Crypt::encrypt($user->email))->withInput(array('email' => $request->get('email')));
-        }
+//      if ($user && !$user->status) {
+//          return redirect('waitActive/' . Crypt::encrypt($user->email))->withInput(array('email' => $request->get('email')));
+//      }
         Auth::loginUsingId($user->id);
         UserModel::where('email', $request->get('email'))->update(['last_login_time' => date('Y-m-d H:i:s')]);
 
@@ -158,7 +158,7 @@ class AuthController extends IndexController
                 
                 PromoteModel::createPromote($request->get('from_uid'),$user);
             }
-            return redirect('waitActive/' . Crypt::encrypt($request->get('email')));
+            return redirect('waitActive/'. Crypt::encrypt($request->get('email')));
         }
         return back()->with(['message' => '注册失败']);
     }
@@ -303,7 +303,6 @@ class AuthController extends IndexController
     public function waitActive($email)
     {
         $email = Crypt::decrypt($email);
-
         $emailType = substr($email, strpos($email, '@') + 1);
         $view = array(
             'email' => $email,

@@ -13,8 +13,6 @@ Route::get('logout', 'Auth\AuthController@getLogout')->name('logout');
 
 Route::get('oauth/{type}', 'Auth\AuthController@oauthLogin');
 Route::get('oauth/{type}/callback', 'Auth\AuthController@handleOAuthCallBack');
-
-
 Route::get('register', 'Auth\AuthController@getRegister')->name('registerCreatePage');
 Route::post('register', 'Auth\AuthController@postRegister')->name('registerCreate');
 Route::post('register/phone', 'Auth\AuthController@phoneRegister');
