@@ -7,6 +7,3 @@
 登录及注册模块的route文件所在位置：app/moudles/article/http/routes.php
 登录访问的控制器是：user模块下的 Auth\AuthController@getLogin，提交到Auth\AuthController@postLogin
 注册访问的控制器是：user模块下的Auth\AuthController@getRegister，提交到Auth\AuthController@postRegister
-
-
-做出了一些改变。
