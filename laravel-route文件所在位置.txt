@@ -9,3 +9,4 @@
 注册访问的控制器是：user模块下的Auth\AuthController@getRegister，提交到Auth\AuthController@postRegister
 
 
+做出了一些改变。
